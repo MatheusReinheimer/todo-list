@@ -1,26 +1,38 @@
+<% if @user.errors.any? %>
+  <div class="form-errors">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @user, url:"/signup" do |f| %>
   <p>
-    <%= f.label :name %>
+    <%= f.label :name, "Seu nome" %>
     <%= f.text_field :name %>
   </p>
 
   <p>
-    <%= f.label :email %>
+    <%= f.label :email, "Seu e-mail" %>
     <%= f.email_field :email %>
   </p>
 
   <p>
-    <%= f.label :password %>
+    <%= f.label :password, "Sua senha" %>
     <%= f.password_field :password %>
   </p>
 
   <p>
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, "Confirme sua senha" %>
     <%= f.password_field :password_confirmation %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "Criar minha conta"%>
   </p>
 
 

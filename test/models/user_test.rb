@@ -41,4 +41,11 @@ class UserTest < ActiveSupport::TestCase
     # binding.pry
     assert user.errors[:password_confirmation].any?
   end
+
+  test "rejects dupicated email" do
+    # binding.pry
+    User.create!(name: "Matheus", email:"piano@piano", password:"test", password_confirmation:"test")
+    @user = User.create(name: "Matheus", email:"piano@piano", password:"test", password_confirmation:"test")
+    assert @user.errors[:email].any?
+  end
 end

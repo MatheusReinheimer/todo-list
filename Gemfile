@@ -10,6 +10,7 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
+gem "rails-i18n"
 
 
 group :development, :test do

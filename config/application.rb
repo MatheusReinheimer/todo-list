@@ -14,7 +14,7 @@ module Recurrence
 
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*/yml')]
     config.i18n.default_locale = "pt-BR"
-
+    config.i18n.available_locales = ["pt-BR"]
     config.time_zone = 'Brasilia'
 
   end
