@@ -1,5 +1,19 @@
 ---
 pt-BR:
+  form:
+    submit:
+      login: "Acessar minha conta"
+    error_messages: "Verifique seu formulario antes de continuar"
+    user:
+      name: "Seu nome"
+      email: "Seu email"
+      password: "Sua senha"
+      password_confirmation: "Confirme sua senha"
+
+  flash:
+    signup:
+      create:
+        notice: "Cadastro realizado com sucesso"
   menu:
     signup: "Criar minha conta"
     login: "Acessar minha conta"

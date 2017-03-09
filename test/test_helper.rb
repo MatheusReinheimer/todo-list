@@ -19,4 +19,12 @@ class ActionDispatch::IntegrationTest
     Capybara.reset_sessions!
     Capybara.use_default_driver
   end
+
+  def t (*args)
+    t = I18n.t(*args)
+  end
+
+  def label(scope)
+    t(scope, :scope => "form")
+  end
 end

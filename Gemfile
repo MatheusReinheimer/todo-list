@@ -11,6 +11,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 gem "rails-i18n"
+gem "bcrypt-ruby"
 
 
 group :development, :test do

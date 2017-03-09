@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   validates_presence_of :name
   validates_presence_of :password, :password_confirmation, on: [:create, :update]
   validates_format_of :email, with: /\A.+@.+\z/
@@ -6,3 +8,4 @@ class User < ApplicationRecord
   validates_confirmation_of :password
   validates_uniqueness_of :email
 end
+

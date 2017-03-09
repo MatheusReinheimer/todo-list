@@ -5,13 +5,10 @@ class SignupController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # binding.pry
     if @user.save
-      flash[:notice] = "Cadastro realizado com sucesso!"
-      redirect_to "/login"
+      redirect_to "/login"; flash[:notice] = t("flash.signup.create.notice")
     else
-      flash[:notice] = "Verifique o formulario antes de continuar"
-      render :new
+      flash[:notice] = t("form.error_messages"); render :new
     end
   end
 

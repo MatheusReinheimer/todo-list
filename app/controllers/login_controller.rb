@@ -1,9 +1,18 @@
 class LoginController < ApplicationController
-  # Controller => Classe
-  # Action => Metodo
-  # login => app/controllers/login_cotroller.rb
-  # template => app/view/login/new.html.erb
   def new
+
+  end
+
+  def create
+    user = User.find_by_email(params[:email])
+
+    if user && user.authenticate(params[:params])
+      reset_session
+      session[:user_id] = user.id
+      redirect_to "/tasks"
+    else
+      render :new
+    end
 
   end
 end
